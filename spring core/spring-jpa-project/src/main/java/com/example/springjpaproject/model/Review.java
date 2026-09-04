@@ -1,12 +1,24 @@
 package com.example.springjpaproject.model;
 
-public class Review {
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+@Entity
+public class Review {
+@Id @GeneratedValue
     private int reviewId;
     private String reviewerName;
 
     private Float rating;
     private String review;
+    @ManyToOne //mandatory . it creates FK
+    @JoinColumn(name="pid")//optional 
+    @JsonIgnore 
     private Product product;
     public Review(){}
    
