@@ -1,25 +1,14 @@
-package com.example.model;
+package com.example.springjpaproject.model;
 
 import java.util.List;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Positive;
-import jakarta.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement
 public class Product {
-    @Positive(message = "product id must be positive")
     private int prodId;
-    @NotBlank(message="Product name is mandatory")
     private String productName;
-    @NotBlank(message = "Price is mandatory")
-    @Pattern(regexp = "^[0-9]+(\\.[0-9]{1,2})?$", message = "Price should be a valid number")
     private String price;
     private List<Review> reviews;
 
-    public Product() {
-    }
+    public Product() {}
 
     public Product(int prodId, String productName, String price, List<Review> reviews) {
         this.prodId = prodId;
