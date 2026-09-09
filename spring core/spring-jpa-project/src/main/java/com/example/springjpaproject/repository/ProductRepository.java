@@ -6,5 +6,6 @@ import com.example.springjpaproject.model.Product;
 
 public interface ProductRepository extends JpaRepository<Product, Integer> {
 	List<Product> findByProductNameContainingIgnoreCase(String name);
+	//query methods
 	List<Product> findByPriceBetween(int min, int max);
 }
