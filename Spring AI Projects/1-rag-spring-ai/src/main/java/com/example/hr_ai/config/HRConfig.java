@@ -55,7 +55,7 @@ public class HRConfig {
             //added in the vector store
             vectorStore.add(splitDocuments); // creates embeddings + stores them in vector store
             //saved as JSON file
-            vectorStore.save(vectorStoreFile);
+            vectorStore.save(vectorStoreFile); //optiona;
         }
         return vectorStore;
     }
