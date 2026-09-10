@@ -61,7 +61,8 @@ public class OneShotService {
                 .user(prompt)
                 .call()
                 .content();
-
+                //{"sentiment"}
+System.out.println(aiResponse);
         try {
 
             JsonNode json = objectMapper.readTree(aiResponse);
